@@ -39,7 +39,7 @@ function Header() {
                     type="text"
                     name="query"
                     placeholder="Search products..."
-                    className="bg-gray-100 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full sm:w-2/3  bg-gray-100 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </Form>
 
@@ -56,6 +56,8 @@ function Header() {
             {/* User Profile */}
             <ClerkLoaded>
                 <SignedIn>
+                    <div className="">
+
                     <Link
                         href="/orders"
                         className="flex-1 relative flex items-center sm:justify-start sm:flex-none items-center justify-center rounded-md border border-transparent bg-gray-600 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
@@ -63,6 +65,7 @@ function Header() {
                         <PackageIcon className="w-6 h-6" />
                         <span>My Orders</span>
                     </Link>
+                    </div>
                 </SignedIn>
 
                 {user ? (
