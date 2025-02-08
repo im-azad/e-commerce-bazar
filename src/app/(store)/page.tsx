@@ -1,12 +1,15 @@
-import { Button } from "@/components/ui/button";
+import ProductsView from "@/components/ProductsView";
+import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      
-      <h1>Store</h1>
-      <Button>Click</Button>
-      
-      </div>
-  );
+export default async function Home() {
+    const products = await getAllProducts();
+    // const categories = await getAllCategories();
+    return (
+        <div className="">
+            <h1>Home</h1>
+            <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4">
+                <ProductsView products={products} />
+            </div>
+        </div>
+    );
 }
